@@ -113,9 +113,10 @@ body{
 }
 
 .container{
-    max-width: 1200px;
+    max-width: 120rem;
+    width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 5rem;
 }
 
 
@@ -188,6 +189,22 @@ input{
     text-decoration: underline;
 }
 
+.beta{
+    position: relative;
+}
+
+.beta::after{
+    content: 'beta';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.3rem;
+    background-color: var(--tertiary-base);
+    padding: 0 0.5rem;
+    border-radius: 0.3rem;
+    transform: translate(75%,0);
+}
+
 
 /* ------------------------ COMPONENTS ------------------------*/
 
@@ -206,8 +223,14 @@ input{
 .btn{
     font-size: 1.6rem;
     text-decoration: none;
-    padding: 1.5rem 3.0rem;
+    padding: 1.2rem 2.5rem;
     border-radius: 3.0rem;
+}
+
+.btn:hover, .btn:active{
+    transform: scale(1.05, 1.15);
+    box-shadow: 2px 2px 6px var(--grey-shade);
+    transition: 0.1s;
 }
 
 
@@ -379,7 +402,7 @@ input{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4rem;
+    padding: 0 2rem;
 }
 
 .nav-btn-container{
@@ -387,19 +410,25 @@ input{
     gap: 2rem;
 }
 
+
 /* ---------- HERO SECTION ---------- */
 .hero-section{
-    height: calc(100vh-var(--nav-height));
-    text-align: center;
-    margin: 10rem 0 ;
+    height: calc(100vh - var(--nav-height));
+    min-height: 400px;
+    margin-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-heading{
-    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .hero-paragraph{
-    margin-bottom: 3rem;
+    margin: 3rem 0;
+    text-align: center;
 }
 
 .hero-btn{
@@ -411,7 +440,18 @@ input{
 /* ---------- FEATURES SECTION ---------- */
 
 .features-section{
-    margin-bottom: 10rem;
+    margin-bottom: 25rem;
+}
+
+.features-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    row-gap: 15rem;
+    column-gap: 5rem;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .features-main-heading{
@@ -421,7 +461,7 @@ input{
 }
 
 .features-img{
-    max-width: 40rem;
+    max-width: 30rem;
     width: 100%;
 }
 
@@ -429,22 +469,30 @@ input{
     margin: 7rem 0 2rem;
 }
 
+.feature-img-swap-order{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
 /* ---------- CTA SECTION ---------- */
 
 .cta-section{
     text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15rem;
 }
 
 .cta-card{
     background-color: var(--secondary-base);
-    max-width: 1000px;
-    padding: 10.0rem 15.0rem;
-    margin: 0 auto;
+    max-width: 100rem;
+    width: 100%;
+    padding: 10rem 15rem;
     border-radius: 10px;
 }
 
 .cta-button{
-    margin: 10px;
+    margin-top: 30px;
 }
 
 
